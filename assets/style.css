@@ -1,0 +1,42 @@
+#navMenu {
+  background-color: #f08a5d;
+  padding: 0.5rem;
+  margin-top: 5.5rem;
+  margin-bottom: 0.5rem;
+}
+
+#navMenu ul li a {
+  color: white;
+}
+#mainCenter img {
+  height: 515px;
+}
+h3 {
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  color: #393e46;
+  text-align: center;
+}
+h5 {
+  margin: 1rem;
+  color: #393e46;
+}
+
+.list-produk a {
+  background-color: #f08a5d;
+  color: white;
+  border: 1px solid white;
+}
+
+.list-produk img {
+  width: 286px;
+  height: 286px;
+}
+
+footer {
+  background-color: #f08a5d;
+  color: white;
+  text-align: center;
+  padding: 0.5rem;
+  text-decoration: none;
+}
