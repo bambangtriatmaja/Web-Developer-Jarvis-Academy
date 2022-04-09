@@ -102,12 +102,14 @@
       // Code kamu di sini, lakukan looping terhadap input di atas
 
       function dataHandling(arr) {
-        var hasil = "";
+        var hasil = [];
         for (let i = 0; i < arr.length; i++) {
-          hasil += `Nomor ID: ${arr[i][0]}<br>`;
-          hasil += `Nama Lengkap: ${arr[i][1]}<br>`;
-          hasil += `TTL: ${arr[i][2]} ${arr[i][3]}<br>`;
-          hasil += `Hobi: ${arr[i][4]}<br>`;
+          hasil += `
+          Nomor ID: ${arr[i][0]} <br>
+          Nama Lengkap: ${arr[i][1]}<br>
+          TTL: ${arr[i][2]} ${arr[i][3]}<br>
+          Hobi: ${arr[i][4]}<br><br>
+          `;
         }
         return hasil;
       }
