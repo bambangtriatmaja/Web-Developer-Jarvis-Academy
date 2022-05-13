@@ -1,0 +1,76 @@
+Task Pertemuan 9 SQL, Jarvis Bootcamp Academy
+Nama: Bambang Triatmaja
+
+1. Buat Database: 
+create database myshop;
+
+2. Membuat Table di dalam database:
+ a. Users:
+ create table users
+    -> (
+    -> id INT NOT NULL AUTO_INCREMENT,
+    -> name VARCHAR(255) NOT NULL,
+    -> email VARCHAR(255) NOT NULL,
+    -> password VARCHAR(255) NOT NULL,
+    -> PRIMARY KEY (id),
+    -> UNIQUE KEY email_unique (email)
+    -> );
+
+    b. categories:
+ create table categories
+    -> (
+    -> id INT NOT NULL AUTO_INCREMENT,
+    -> name VARCHAR(255),
+    -> PRIMARY KEY (id)
+    -> );
+
+	c. items:
+ create table items
+    -> (
+    -> id INT NOT NULL AUTO_INCREMENT,
+    -> name VARCHAR(255) NOT NULL,
+    -> description VARCHAR(255),
+    -> price INT NOT NULL DEFAULT 0,
+    -> stock INT NOT NULL DEFAULT 0,
+    -> category_id INT,
+    -> PRIMARY KEY (id),
+    -> CONSTRAINT fk_items_categories FOREIGN KEY (category_id) references categories (id)
+    -> );
+
+3. Memasukkan Data pada Table: 
+   a. Users:
+ insert into users (name, email, password)
+    -> values ('John Doe', 'john@doe.com', 'john123'),
+    -> ('Jane Doe', 'jane@doe.com', 'jenita123');
+
+   b. categories:
+ insert into categories (name) values
+    -> ('gadget'),
+    -> ('cloth'),
+    -> ('men'),
+    -> ('women'),
+    -> ('branded');
+
+  c. items:
+ insert into items (name, description, price, stock, category_id) values
+    -> ('Sumsang b50', 'hape keren dari merek sumsang', 4000000, 100, 1),
+    -> ('Uniklooh', 'baju keren dari brand ternama', 500000, 50, 2),
+    -> ('IMHO Watch', 'jam tangan anak yang jujur banget', 2000000, 10, 1);
+
+4. Mengambil Data dari Database:
+   1. Mengambil data users:
+	  select id, name, email from users;
+   2. Mengambil data items:
+	  a. select * from items where price > 1000000;
+	  b. select * from items where name LIKE 'uniklo%';
+   3. select items.name as name, items.description as description, items.price as price, items.stock as stock,
+    -> items.category_id as category_id,
+    -> categories.name as kategori
+    -> from items
+    -> join categories on (categories.id = items.category_id);
+
+
+5. Mengubah Data dari Database:
+	update items
+    -> set price = 2500000
+    -> where name = 'Sumsang b50';
